@@ -1,6 +1,10 @@
 package br.com.amsj.aws.dto;
 
-public class UserDto {
+import java.io.Serializable;
+
+public class UserDto implements Serializable {
+	
+	private static final long serialVersionUID = 3996516755045584457L;
 	
 	String name;
 	String surname;

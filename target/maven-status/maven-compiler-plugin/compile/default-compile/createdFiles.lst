@@ -1,3 +1,5 @@
-br/com/amsj/aws/dto/ResponseErrorDto.class
+br/com/amsj/aws/dto/UserDtoInput.class
 br/com/amsj/aws/lambdahandler/LambdaHandlerHelloWorld.class
+br/com/amsj/aws/dto/ResponseErrorDto.class
+br/com/amsj/aws/lambdahandler/LambdaHandlerObjectInput.class
 br/com/amsj/aws/dto/UserDto.class

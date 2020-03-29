@@ -10,9 +10,51 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import br.com.amsj.aws.dto.ResponseErrorDto;
 import br.com.amsj.aws.dto.UserDto;
 
+// DISABLED
 public class LambdaHandlerHelloWorld implements RequestHandler<Map<String,Object>, String> {
 
 // br.com.amsj.aws.lambdahandler.LambdaHandlerHelloWorld::handleRequest
+	
+/*
+TO CALL
+{
+  "firstname": "John",
+  "surname": "Crazy",
+  "age": 10
+}
+*/
+	
+	
+/*
+TO VALIDATE	
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "validateInput",
+    "type": "object",
+    "properties": {
+        "firstname": {
+            "type": "string"
+        },
+        "surname": {
+            "type": "string"
+        },
+        "age": {
+            "type": "integer"
+        }
+    },
+    "required":[ "firstname" , "surname", "age" ]
+}
+*/
+
+/*
+TO TRANSFORM THE REQUEST
+#set($inputRoot = $input.path('$'))
+{
+  "firstName" : "$inputRoot.firstname",
+  "surname" : "$inputRoot.surname",
+  "age" : "$inputRoot.age"
+}
+*/
 	
 	@Override
 	public String handleRequest(Map<String,Object> input, Context context) {
