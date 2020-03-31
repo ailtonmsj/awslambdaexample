@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "assigment-2",
+    "description": "test model",
+    "version": "2020-03-29T22:19:57Z"
+  },
+  "servers": [
+    {
+      "url": "https://51891rkizk.execute-api.us-west-2.amazonaws.com/{basePath}",
+      "variables": {
+        "basePath": {
+          "default": "/beta"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/personValidation"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "personValidation": {
+        "title": "validateInput",
+        "required": [
+          "age",
+          "firstname",
+          "surname"
+        ],
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "surname": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

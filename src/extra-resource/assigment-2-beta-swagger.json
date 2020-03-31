@@ -1,0 +1,62 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "test model",
+    "version": "2020-03-29T22:19:57Z",
+    "title": "assigment-2"
+  },
+  "host": "51891rkizk.execute-api.us-west-2.amazonaws.com",
+  "basePath": "/beta",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "personValidation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/personValidation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "personValidation": {
+      "type": "object",
+      "required": [
+        "age",
+        "firstname",
+        "surname"
+      ],
+      "properties": {
+        "firstname": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      },
+      "title": "validateInput"
+    }
+  }
+}
