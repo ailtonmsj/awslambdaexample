@@ -1,4 +1,4 @@
-/target/
+target/
 
 ### Eclipse ###
 .apt_generated
@@ -8,6 +8,7 @@
 .settings
 .springBeans
 .sts4-cache
+.metadata
 
 ### IntelliJ IDEA ###
 .idea
