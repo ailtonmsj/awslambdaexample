@@ -7,9 +7,7 @@ public class UserDtoInput implements Serializable {
 	private static final long serialVersionUID = -653773687134051542L;
 	
 	private String firstName;
-	
 	private String surname;
-	
 	private Integer age;
 	
 	public String getFirstName() {

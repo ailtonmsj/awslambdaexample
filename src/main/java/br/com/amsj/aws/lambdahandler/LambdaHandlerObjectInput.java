@@ -7,61 +7,6 @@ import br.com.amsj.aws.dto.UserDto;
 import br.com.amsj.aws.dto.UserDtoInput;
 
 public class LambdaHandlerObjectInput implements RequestHandler<UserDtoInput, UserDto> {
-	
-	
-// br.com.amsj.aws.lambdahandler.LambdaHandlerObjectInput::handleRequest
-
-/*
-TO CALL
-{
-  "firstname": "John",
-  "surname": "Crazy",
-  "age": 10
-}
-*/
-	
-	
-/*
-TO VALIDATE	
-{
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "validateInput",
-    "type": "object",
-    "properties": {
-        "firstname": {
-            "type": "string"
-        },
-        "surname": {
-            "type": "string"
-        },
-        "age": {
-            "type": "integer"
-        }
-    },
-    "required":[ "firstname" , "surname", "age" ]
-}
-*/
-
-/*
-TO TRANSFORM THE REQUEST
-#set($inputRoot = $input.path('$'))
-{
-  "firstName" : "$inputRoot.firstname",
-  "surname" : "$inputRoot.surname",
-  "age" : "$inputRoot.age"
-}
-*/
-	
-	
-/*
-TO TRANSFORM THE RESPONSE	
-#set($inputRoot = $input.path('$'))
-{
-  "fullName" : "$inputRoot.name $inputRoot.surname",
-  "detail" : "$inputRoot.detail"
-}
-*/	
-	
 
 	@Override
 	public UserDto handleRequest(UserDtoInput userDtoInput, Context context) {
@@ -82,3 +27,52 @@ TO TRANSFORM THE RESPONSE
 		return userDto;
 	}
 }
+
+/*
+TO CONFIGURE HANDLER
+br.com.amsj.aws.lambdahandler.LambdaHandlerObjectInput::handleRequest
+
+***** TO CALL *****
+{
+"firstname": "John",
+"surname": "Crazy",
+"age": 10
+}
+	
+	
+***** TO VALIDATE *****	
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "validateInput",
+ "type": "object",
+ "properties": {
+     "firstname": {
+         "type": "string"
+     },
+     "surname": {
+         "type": "string"
+     },
+     "age": {
+         "type": "integer"
+     }
+ },
+ "required":[ "firstname" , "surname", "age" ]
+}
+
+
+***** TO TRANSFORM THE REQUEST ***** 
+#set($inputRoot = $input.path('$'))
+{
+"firstName" : "$inputRoot.firstname",
+"surname" : "$inputRoot.surname",
+"age" : "$inputRoot.age"
+}
+	
+	
+***** TO TRANSFORM THE RESPONSE *****	
+#set($inputRoot = $input.path('$'))
+{
+"fullName" : "$inputRoot.name $inputRoot.surname",
+"detail" : "$inputRoot.detail"
+}
+*/	
